@@ -1,38 +1,64 @@
-.App {
+/* src/App.css */
+.app {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.a4-sheet {
+  width: 794px; /* A4 width in pixels */
+  height: 1123px; /* A4 height in pixels */
+  margin: 0 auto 40px;
+  border: 1px solid #ccc;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: calc(
+    100% - 80px
+  ); /* Subtract total horizontal margins (40px each side) */
+  height: calc(
+    100% - 124px
+  ); /* Subtract total vertical margins (62px each side) */
+  margin: 62px 40px; /* Vertical and horizontal margins */
+  box-sizing: border-box;
+}
+
+.card {
+  width: 238px; /* Card width */
+  height: 333px; /* Card height */
+  /* Remove margins between cards */
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill the card without distortion */
+}
+
+.image-uploader {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #bbb;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-uploader input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
